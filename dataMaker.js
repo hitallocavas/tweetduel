@@ -1,8 +1,9 @@
 const stringSimilarity = require('string-similarity'),
+    sentiment = require('sentiment'),
     fs = require('fs');
 
 //get primary data
-const data = JSON.parse(fs.readFileSync('./data/TwitterTweetData10.js'));
+const data = JSON.parse(fs.readFileSync('./data/TwitterTweetData20.js'));
 
 //refine data
 let nodes = data.map((tweet) => {
@@ -21,7 +22,9 @@ let nodes = data.map((tweet) => {
 let edges = [];
 nodes.forEach(source => {
     nodes.forEach(target => {
-        if(stringSimilarity.compareTwoStrings(source.text, target.text) > 0.8)
+        //if(stringSimilarity.compareTwoStrings(source.text, target.text) > 0.8)
+        console.log(sentiment(source.text).score);
+        if(sentiment(source.text).score == sentiment(target.text).score)
             edges.push({
                 id: Math.random(0),
                 source: source.id,
