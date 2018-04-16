@@ -17,6 +17,8 @@
   "homepage": "https://github.com/renatodms/tweetduel#readme",
   "dependencies": {
     "express": "^4.16.3",
+    "fast-levenshtein": "^2.0.6",
+    "node-lcs": "^1.0.2",
     "npm": "^5.8.0",
     "sentiment": "^4.2.0",
     "string-similarity": "^1.2.0"

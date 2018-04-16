@@ -8,7 +8,7 @@ const express = require('express'),
 app.use(express.static(__dirname + '/public'));
 
 //listen
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 http.listen(port, () => {
     console.log('server is running on port %d', port);
 });
